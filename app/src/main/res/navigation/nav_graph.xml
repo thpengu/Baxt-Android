@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/languageScreen">
+
+    <fragment
+        android:id="@+id/languageScreen"
+        android:name="uz.karsoft.baxt.ui.lang.LanguageScreen"
+        android:label="LanguageScreen"
+        tools:layout="@layout/layout_language">
+        <action
+            android:id="@+id/action_languageScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+        <action
+            android:id="@+id/action_languageScreen_to_registrationScreen"
+            app:destination="@id/registrationScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationScreen"
+        android:name="uz.karsoft.baxt.ui.auth.registration.RegistrationScreen"
+        android:label="RegistrationScreen"
+        tools:layout="@layout/layout_registration">
+        <action
+            android:id="@+id/action_registrationScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/registrationScreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="uz.karsoft.baxt.ui.auth.login.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/layout_login">
+        <action
+            android:id="@+id/action_loginScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginScreen"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginScreen_to_registrationScreen"
+            app:destination="@id/registrationScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.karsoft.baxt.ui.main.MainScreen"
+        android:label="MainScreen"
+        tools:layout="@layout/layout_main"/>
+</navigation>

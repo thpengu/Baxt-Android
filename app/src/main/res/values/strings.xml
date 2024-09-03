@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Baxt</string>
+    <string name="uzbek">O\'zbekshe</string>
+    <string name="russian">Русский</string>
+    <string name="english">English</string>
+    <string name="karakalpak">Karakalpak</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+</resources>
