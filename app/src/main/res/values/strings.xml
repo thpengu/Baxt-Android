@@ -7,4 +7,16 @@
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="profile">Profile</string>
+    <string name="connection_error">Connection error</string>
+    <string name="required">Required</string>
+    <string name="error">Error</string>
+    <string name="welcome">Welcome</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="forget_password">Forget password</string>
+    <string name="full_name">Full name</string>
+    <string name="password_length">Password must be 6 or more characters</string>
 </resources>

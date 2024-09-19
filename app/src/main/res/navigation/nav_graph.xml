@@ -43,10 +43,26 @@
         <action
             android:id="@+id/action_loginScreen_to_registrationScreen"
             app:destination="@id/registrationScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_privacyPolicyScreen"
+            app:destination="@id/privacyPolicyScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_forgetPasswordScreen"
+            app:destination="@id/forgetPasswordScreen" />
     </fragment>
     <fragment
         android:id="@+id/mainScreen"
         android:name="uz.karsoft.baxt.ui.main.MainScreen"
         android:label="MainScreen"
         tools:layout="@layout/layout_main"/>
+    <fragment
+        android:id="@+id/forgetPasswordScreen"
+        android:name="uz.karsoft.baxt.ui.auth.login.ForgetPasswordScreen"
+        android:label="ForgetPasswordScreen"
+        tools:layout="@layout/layout_forget_password"/>
+    <fragment
+        android:id="@+id/privacyPolicyScreen"
+        android:name="uz.karsoft.baxt.ui.auth.login.PrivacyPolicyScreen"
+        android:label="PrivacyPolicyScreen"
+        tools:layout="@layout/layout_privacy_policy"/>
 </navigation>

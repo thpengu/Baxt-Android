@@ -67,4 +67,24 @@ dependencies {
     androidTestImplementation (libs.androidx.navigation.testing)
 
     implementation (libs.circleimageview)
+
+    implementation(libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.retrofit2.kotlin.coroutines.adapter)
+    implementation (libs.logging.interceptor.v500alpha3)
+
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.insert.koin.koin.android)
+    // Jetpack WorkManager
+    implementation(libs.koin.androidx.workmanager)
+    // Navigation Graph
+    implementation(libs.koin.androidx.navigation)
+
+    implementation(libs.okhttp)
+
+    implementation(libs.gson)
+
+    /** logging interceptor*/
+    implementation(libs.logging.interceptor)
 }
