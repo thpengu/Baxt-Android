@@ -19,4 +19,6 @@
     <string name="forget_password">Forget password</string>
     <string name="full_name">Full name</string>
     <string name="password_length">Password must be 6 or more characters</string>
+    <string name="balance">Balance</string>
+    <string name="settings">Settings</string>
 </resources>
