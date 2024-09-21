@@ -23,6 +23,7 @@ class MainScreen: Fragment(R.layout.layout_main) {
 
         binding.apply {
             bottomNavView.setupWithNavController(childNavController)
+
         }
 
     }

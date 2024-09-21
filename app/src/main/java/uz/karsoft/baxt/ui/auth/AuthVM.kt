@@ -6,39 +6,37 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import uz.karsoft.baxt.data.models.auth.Auth
+import uz.karsoft.baxt.data.models.auth.General
 import uz.karsoft.baxt.data.models.auth.AuthSuccess
 import uz.karsoft.baxt.repo.AuthRepository
 
 class AuthVM(private val authRepository: AuthRepository): ViewModel() {
-    private val _loginState = MutableStateFlow<Auth<AuthSuccess>>(Auth.Empty)
-    val loginState: StateFlow<Auth<AuthSuccess>> = _loginState
+    private val _loginState = MutableStateFlow<General<AuthSuccess>>(General.Empty)
+    val loginState: StateFlow<General<AuthSuccess>> = _loginState
 
-    fun signIn(phone: String, password: String, networkError: String) {
-        _loginState.value = Auth.Loading
+    fun signIn(phone: String, password: String) {
+        _loginState.value = General.Loading
         viewModelScope.launch(Dispatchers.IO) {
-            authRepository.signIn(phone, password, networkError).collect { result ->
+            authRepository.signIn(phone, password).collect { result ->
                 _loginState.value = result
             }
         }
     }
 
-    private val _signUpState = MutableStateFlow<Auth<AuthSuccess>>(Auth.Empty)
-    val signUpState: StateFlow<Auth<AuthSuccess>> = _signUpState
+    private val _signUpState = MutableStateFlow<General<AuthSuccess>>(General.Empty)
+    val signUpState: StateFlow<General<AuthSuccess>> = _signUpState
 
     fun signUp(
         name: String,
         phone: String,
         password: String,
-        networkError :String,
     ) {
-        _signUpState.value = Auth.Loading
+        _signUpState.value = General.Loading
         viewModelScope.launch(Dispatchers.IO) {
             authRepository.signUp(
                 name = name,
                 phone = phone,
-                password = password,
-                networkError = networkError,
+                password = password
             ).collect { result ->
                 _signUpState.value = result
             }

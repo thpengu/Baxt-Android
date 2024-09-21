@@ -3,31 +3,31 @@ package uz.karsoft.baxt.repo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
-import uz.karsoft.baxt.data.models.auth.Auth
+import uz.karsoft.baxt.data.models.auth.General
 import uz.karsoft.baxt.data.models.auth.AuthSuccess
 import uz.karsoft.baxt.data.remote.ApiInterface
 import uz.karsoft.baxt.settings.Settings
 import java.io.IOException
 
 class AuthRepository(private val apiService: ApiInterface, private val settings: Settings) {
-    fun signIn(phone: String, password: String, networkError: String): Flow<Auth<AuthSuccess>> =
+    fun signIn(phone: String, password: String): Flow<General<AuthSuccess>> =
         flow {
-            emit(Auth.Loading)
+            emit(General.Loading)
             try {
                 val response = apiService.signIn(phone, password)
                 if (response.isSuccessful) {
                     response.body()?.let { body ->
-                        emit(Auth.SuccessData(body))
+                        emit(General.SuccessData(body))
                         settings.token = body.data.token
                         settings.loggedIn = true
-                    } ?: emit(Auth.Error("No data received"))
+                    } ?: emit(General.Error("No data received"))
                 } else {
-                    emit(Auth.Error("Error: ${response.code()} ${response.message()}"))
+                    emit(General.Error("Error: ${response.code()} ${response.message()}"))
                 }
             } catch (e: IOException) {
-                emit(Auth.NetworkError(networkError))
+                emit(General.NetworkError(e.message))
             } catch (e: HttpException) {
-                emit(Auth.Error("HTTP error: ${e.message}"))
+                emit(General.Error("HTTP error: ${e.message}"))
             }
         }
 
@@ -35,25 +35,24 @@ class AuthRepository(private val apiService: ApiInterface, private val settings:
         name: String,
         phone: String,
         password: String,
-        networkError: String,
-    ): Flow<Auth<AuthSuccess>> = flow {
-        emit(Auth.Loading)
+    ): Flow<General<AuthSuccess>> = flow {
+        emit(General.Loading)
         try {
             val response = apiService.signUp(name, phone, password)
             if (response.isSuccessful) {
                 response.body()?.let { body ->
 
-                    emit(Auth.SuccessData(body))
+                    emit(General.SuccessData(body))
                     settings.token = body.data.token
                     settings.loggedIn = true
-                } ?: emit(Auth.Error("No data received"))
+                } ?: emit(General.Error("No data received"))
             } else {
-                emit(Auth.Error("Error: ${response.code()} ${response.message()}"))
+                emit(General.Error("Error: ${response.code()} ${response.message()}"))
             }
         } catch (e: IOException) {
-            emit(Auth.NetworkError(networkError))
+            emit(General.NetworkError(e.message))
         } catch (e: HttpException) {
-            emit(Auth.Error("HTTP error: ${e.message}"))
+            emit(General.Error("HTTP error: ${e.message}"))
         }
     }
 }

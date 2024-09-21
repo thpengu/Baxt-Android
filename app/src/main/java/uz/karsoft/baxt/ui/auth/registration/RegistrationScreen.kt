@@ -1,7 +1,6 @@
 package uz.karsoft.baxt.ui.auth.registration
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -12,7 +11,7 @@ import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.karsoft.baxt.R
-import uz.karsoft.baxt.data.models.auth.Auth
+import uz.karsoft.baxt.data.models.auth.General
 import uz.karsoft.baxt.data.models.auth.AuthSuccess
 import uz.karsoft.baxt.databinding.LayoutRegistrationBinding
 import uz.karsoft.baxt.extensions.formatPhoneNumber
@@ -52,8 +51,7 @@ class RegistrationScreen : Fragment(R.layout.layout_registration) {
                     vm.signUp(
                         phone = phone,
                         password = password,
-                        name = name,
-                        networkError = getString(R.string.connection_error)
+                        name = name
 
                     )
                 } else {
@@ -86,23 +84,23 @@ class RegistrationScreen : Fragment(R.layout.layout_registration) {
         lifecycleScope.launch {
             vm.signUpState.collect { result ->
                 when (result) {
-                    is Auth.SuccessData<AuthSuccess> -> {
+                    is General.SuccessData<AuthSuccess> -> {
                         setLoading(false)
                         navController.navigate(R.id.action_registrationScreen_to_mainScreen)
                     }
 
-                    is Auth.NetworkError -> {
+                    is General.NetworkError -> {
                         setLoading(false)
                         showMessage(result.msg ?: getString(R.string.connection_error))
                     }
 
-                    is Auth.Error -> {
+                    is General.Error -> {
                         setLoading(false)
                         //Log.d("qalay", "setUpObservers: ${result}")
                         showMessage(result.toString())
                     }
 
-                    is Auth.Loading -> {
+                    is General.Loading -> {
                         setLoading(true)
                     }
 

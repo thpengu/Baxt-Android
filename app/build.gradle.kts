@@ -87,4 +87,7 @@ dependencies {
 
     /** logging interceptor*/
     implementation(libs.logging.interceptor)
+    /** glide **/
+    implementation(libs.glide)
+
 }

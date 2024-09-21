@@ -10,8 +10,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import uz.karsoft.baxt.data.remote.ApiInterface
 import uz.karsoft.baxt.repo.AuthRepository
+import uz.karsoft.baxt.repo.MainRepository
 import uz.karsoft.baxt.settings.Settings
 import uz.karsoft.baxt.ui.auth.AuthVM
+import uz.karsoft.baxt.ui.main.home.HomeVM
 
 val networkModule = module {
     val baseUrl = "https://www.api.baxt.iztileuoff.uz"
@@ -46,7 +48,9 @@ val helperModule = module {
 
 val repositoryModule = module {
     single {AuthRepository(get(), get())}
+    single { MainRepository(get(), get()) }
 }
 val viewModule = module {
     viewModel { AuthVM(get()) }
+    viewModel { HomeVM(get()) }
 }

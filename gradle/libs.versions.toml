@@ -2,6 +2,7 @@
 agp = "8.5.0"
 circleimageview = "3.1.0"
 converterGson = "2.9.0"
+glide = "4.14.2"
 gson = "2.11.0"
 koinAndroid = "3.5.6"
 koinBom = "3.5.6"
@@ -31,6 +32,7 @@ androidx-navigation-testing = { module = "androidx.navigation:navigation-testing
 androidx-navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationCompose" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 insert-koin-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
