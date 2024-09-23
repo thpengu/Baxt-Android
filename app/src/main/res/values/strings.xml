@@ -21,4 +21,6 @@
     <string name="password_length">Password must be 6 or more characters</string>
     <string name="balance">Balance</string>
     <string name="settings">Settings</string>
+    <string name="saved">Saved</string>
+    <string name="basket">Basket</string>
 </resources>

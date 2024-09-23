@@ -1,4 +1,4 @@
-package uz.karsoft.baxt.ui.main
+package uz.karsoft.baxt.ui.main.profile
 
 import androidx.fragment.app.Fragment
 import uz.karsoft.baxt.R

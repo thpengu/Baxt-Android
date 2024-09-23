@@ -1,4 +1,4 @@
-package uz.karsoft.baxt.ui.main.home
+package uz.karsoft.baxt.ui.main.search
 
 import android.os.Bundle
 import android.view.View
@@ -10,31 +10,31 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.karsoft.baxt.R
 import uz.karsoft.baxt.data.models.auth.General
 import uz.karsoft.baxt.data.models.main.home.Collections
-import uz.karsoft.baxt.databinding.LayoutHomeBinding
+import uz.karsoft.baxt.data.models.main.search.Categories
+import uz.karsoft.baxt.databinding.LayoutSearchBinding
 import uz.karsoft.baxt.extensions.showMessage
 
-class HomeScreen: Fragment(R.layout.layout_home) {
-    private lateinit var binding: LayoutHomeBinding
-    private val vm: HomeVM by viewModel()
-    private val adapter = CollectionAdapter()
+class SearchScreen: Fragment(R.layout.layout_search) {
+    private lateinit var binding: LayoutSearchBinding
+    private val vm: SearchVM by viewModel()
+    private val adapter = SearchAdapter()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = LayoutHomeBinding.bind(view)
+        binding = LayoutSearchBinding.bind(view)
 
         binding.apply {
-            rvCategories.adapter = adapter
+            rvSearch.adapter = adapter
         }
 
-        vm.getCollections()
-
+        vm.getCategories()
         setUpObservers()
     }
-
     private fun setUpObservers() = binding.apply {
         lifecycleScope.launch {
-            vm.collectionState.collect { result ->
+            vm.categoriesState.collect { result ->
                 when (result) {
-                    is General.SuccessData<Collections> -> {
+                    is General.SuccessData<Categories> -> {
                         setLoading(false)
                         adapter.models = result.data.data
                     }

@@ -10,10 +10,18 @@
         android:label="HomeScreen" />
     <fragment
         android:id="@+id/nav_profile"
-        android:name="uz.karsoft.baxt.ui.main.ProfileScreen"
+        android:name="uz.karsoft.baxt.ui.main.profile.ProfileScreen"
         android:label="ProfileScreen" />
     <fragment
         android:id="@+id/nav_search"
-        android:name="uz.karsoft.baxt.ui.main.SearchScreen"
+        android:name="uz.karsoft.baxt.ui.main.search.SearchScreen"
         android:label="SearchScreen" />
+    <fragment
+        android:id="@+id/nav_basket"
+        android:name="uz.karsoft.baxt.ui.main.basket.BasketScreen"
+        android:label="BasketScreen" />
+    <fragment
+        android:id="@+id/nav_saved"
+        android:name="uz.karsoft.baxt.ui.main.saved.SavedScreen"
+        android:label="SavedScreen" />
 </navigation>

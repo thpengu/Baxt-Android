@@ -14,6 +14,7 @@ import uz.karsoft.baxt.repo.MainRepository
 import uz.karsoft.baxt.settings.Settings
 import uz.karsoft.baxt.ui.auth.AuthVM
 import uz.karsoft.baxt.ui.main.home.HomeVM
+import uz.karsoft.baxt.ui.main.search.SearchVM
 
 val networkModule = module {
     val baseUrl = "https://www.api.baxt.iztileuoff.uz"
@@ -53,4 +54,5 @@ val repositoryModule = module {
 val viewModule = module {
     viewModel { AuthVM(get()) }
     viewModel { HomeVM(get()) }
+    viewModel { SearchVM(get()) }
 }

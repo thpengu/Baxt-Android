@@ -8,6 +8,7 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 import uz.karsoft.baxt.data.models.auth.AuthSuccess
 import uz.karsoft.baxt.data.models.main.home.Collections
+import uz.karsoft.baxt.data.models.main.search.Categories
 
 interface ApiInterface {
 
@@ -28,5 +29,8 @@ interface ApiInterface {
 
     @GET("/api/v1/customer/collections")
     suspend fun getCollections(@Header("Authorization") token: String): Response<Collections>
+
+    @GET("/api/v1/customer/categories")
+    suspend fun getCategories(@Header("Authorization") token: String): Response<Categories>
 
 }

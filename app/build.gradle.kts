@@ -87,7 +87,11 @@ dependencies {
 
     /** logging interceptor*/
     implementation(libs.logging.interceptor)
-    /** glide **/
+    /** glide */
     implementation(libs.glide)
+
+    /** swipe refresh layout */
+    implementation(libs.androidx.swiperefreshlayout)
+
 
 }

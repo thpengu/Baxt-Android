@@ -8,6 +8,7 @@ class Settings(context: Context) {
         const val TOKEN = "token"
         const val LOGGED_IN = "logged_in"
         const val LANGUAGE = "language"
+        const val NAME = "name"
     }
     private val preferences: SharedPreferences = context.getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
 
@@ -26,4 +27,9 @@ class Settings(context: Context) {
     var language: String
         set(value) = preferences.edit().putString(LANGUAGE, value).apply()
         get() = preferences.getString(LANGUAGE, "") ?: ""
+
+    /** user name*/
+    var name: String
+        set(value) = preferences.edit().putString(NAME, value).apply()
+        get() = preferences.getString(NAME, "") ?: ""
 }

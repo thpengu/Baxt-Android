@@ -1,7 +1,5 @@
 package uz.karsoft.baxt.ui.main.home
 
-import android.annotation.SuppressLint
-import android.net.Uri
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,7 +10,7 @@ import uz.karsoft.baxt.extensions.base.BaseAdapter
 import uz.karsoft.baxt.extensions.inflate
 import uz.karsoft.baxt.extensions.onClick
 
-class CategoriesAdapter: BaseAdapter<Data, CategoriesAdapter.ViewHolder>() {
+class CollectionAdapter: BaseAdapter<Data, CollectionAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
