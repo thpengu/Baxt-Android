@@ -102,6 +102,7 @@
                 android:layout_width="@dimen/_40"
                 android:layout_height="@dimen/_40"
                 android:padding="@dimen/_8"
+                android:layout_marginEnd="@dimen/_16"
                 android:src="@drawable/ic_edit"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +155,8 @@
                 android:src="@drawable/ic_right"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="@dimen/_16"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

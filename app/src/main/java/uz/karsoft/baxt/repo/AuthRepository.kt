@@ -20,6 +20,7 @@ class AuthRepository(private val apiService: ApiInterface, private val settings:
                         emit(General.SuccessData(body))
                         settings.token = body.data.token
                         settings.loggedIn = true
+                        settings.name = body.data.name
                     } ?: emit(General.Error("No data received"))
                 } else {
                     emit(General.Error("Error: ${response.code()} ${response.message()}"))
@@ -45,6 +46,7 @@ class AuthRepository(private val apiService: ApiInterface, private val settings:
                     emit(General.SuccessData(body))
                     settings.token = body.data.token
                     settings.loggedIn = true
+                    settings.name = body.data.name
                 } ?: emit(General.Error("No data received"))
             } else {
                 emit(General.Error("Error: ${response.code()} ${response.message()}"))

@@ -25,6 +25,11 @@ class SearchScreen: Fragment(R.layout.layout_search) {
 
         binding.apply {
             rvSearch.adapter = adapter
+
+            swipeRefreshLayout.setOnRefreshListener {
+                vm.getCategories()
+                swipeRefreshLayout.isRefreshing = false
+            }
         }
 
         vm.getCategories()

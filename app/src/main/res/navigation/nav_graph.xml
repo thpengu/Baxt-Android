@@ -12,7 +12,8 @@
         tools:layout="@layout/layout_language">
         <action
             android:id="@+id/action_languageScreen_to_loginScreen"
-            app:destination="@id/loginScreen" />
+            app:destination="@id/loginScreen"
+            />
         <action
             android:id="@+id/action_languageScreen_to_registrationScreen"
             app:destination="@id/registrationScreen" />
@@ -26,7 +27,7 @@
             android:id="@+id/action_registrationScreen_to_mainScreen"
             app:destination="@id/mainScreen"
             app:launchSingleTop="true"
-            app:popUpTo="@id/registrationScreen"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true"/>
     </fragment>
     <fragment
@@ -38,7 +39,7 @@
             android:id="@+id/action_loginScreen_to_mainScreen"
             app:destination="@id/mainScreen"
             app:launchSingleTop="true"
-            app:popUpTo="@id/loginScreen"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_loginScreen_to_registrationScreen"
