@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -24,6 +25,7 @@ class LoginScreen : Fragment(R.layout.layout_login) {
     private lateinit var navController: NavController
     private val vm: AuthVM by viewModel()
     private val settings: Settings by inject()
+    private val safeArgs: LoginScreenArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,7 +68,8 @@ class LoginScreen : Fragment(R.layout.layout_login) {
                 }
             }
             btnRegistration.setOnClickListener {
-                navController.navigate(R.id.action_loginScreen_to_registrationScreen)
+                val action = LoginScreenDirections.actionLoginScreenToRegistrationScreen(safeArgs.lang)
+                navController.navigate(action)
             }
         }
         setUpObservers()

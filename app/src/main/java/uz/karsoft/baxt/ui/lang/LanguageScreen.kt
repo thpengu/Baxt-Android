@@ -26,7 +26,6 @@ class LanguageScreen: Fragment(R.layout.layout_language){
             navController.navigate(R.id.action_languageScreen_to_loginScreen)
         }
 
-
         binding.apply {
             tvEn.setOnClickListener {
                 //changeLang()
@@ -48,8 +47,10 @@ class LanguageScreen: Fragment(R.layout.layout_language){
     }
 
     private fun moveToLogin(lang: String){
-        settings.language = lang
-        navController.navigate(R.id.action_languageScreen_to_loginScreen)
+        //settings.language = lang
+
+        val action = LanguageScreenDirections.actionLanguageScreenToLoginScreen(lang)
+        navController.navigate(action)
     }
 
     private fun changeLang(){

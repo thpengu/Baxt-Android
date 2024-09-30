@@ -29,6 +29,10 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true"/>
+        <argument
+            android:name="lang"
+            app:argType="string"
+            android:defaultValue=""/>
     </fragment>
     <fragment
         android:id="@+id/loginScreen"
@@ -50,6 +54,10 @@
         <action
             android:id="@+id/action_loginScreen_to_forgetPasswordScreen"
             app:destination="@id/forgetPasswordScreen" />
+        <argument
+            android:name="lang"
+            app:argType="string"
+            android:defaultValue=""/>
     </fragment>
     <fragment
         android:id="@+id/mainScreen"
