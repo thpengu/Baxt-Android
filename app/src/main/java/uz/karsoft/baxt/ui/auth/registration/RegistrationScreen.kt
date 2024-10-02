@@ -1,6 +1,7 @@
 package uz.karsoft.baxt.ui.auth.registration
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -96,7 +97,6 @@ class RegistrationScreen : Fragment(R.layout.layout_registration) {
 
                     is General.Error -> {
                         setLoading(false)
-                        //Log.d("qalay", "setUpObservers: ${result}")
                         showMessage(result.toString())
                     }
 

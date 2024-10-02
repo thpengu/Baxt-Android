@@ -1,5 +1,6 @@
 package uz.karsoft.baxt.repo
 
+import android.util.Log
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -42,18 +43,19 @@ class AuthRepository(private val apiService: ApiInterface, private val settings:
             val response = apiService.signUp(name, phone, password)
             if (response.isSuccessful) {
                 response.body()?.let { body ->
-
                     emit(General.SuccessData(body))
                     settings.token = body.data.token
                     settings.loggedIn = true
                     settings.name = body.data.name
                 } ?: emit(General.Error("No data received"))
             } else {
+                //Log.d("qalay", "setUpObservers: ${response.message()}")
                 emit(General.Error("Error: ${response.code()} ${response.message()}"))
             }
         } catch (e: IOException) {
             emit(General.NetworkError(e.message))
         } catch (e: HttpException) {
+            //Log.d("qalay", "setUpObservers: ${e.message}")
             emit(General.Error("HTTP error: ${e.message}"))
         }
     }

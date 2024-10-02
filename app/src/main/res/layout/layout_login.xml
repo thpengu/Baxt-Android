@@ -7,7 +7,6 @@
     android:fillViewport="true"
     android:focusableInTouchMode="true">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -49,7 +48,7 @@
             android:padding="@dimen/_16"
             android:textSize="@dimen/_16"
             android:maxLength="16"
-
+            tools:ignore="SpUsage"
             app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
         <com.google.android.material.textfield.TextInputEditText
@@ -63,7 +62,8 @@
             android:inputType="textPassword"
             android:padding="@dimen/_16"
             android:textSize="@dimen/_16"
-            app:layout_constraintTop_toBottomOf="@id/et_phone" />
+            app:layout_constraintTop_toBottomOf="@id/et_phone"
+            tools:ignore="SpUsage" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_login"

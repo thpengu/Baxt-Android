@@ -6,6 +6,7 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 import uz.karsoft.baxt.data.models.auth.AuthSuccess
 import uz.karsoft.baxt.data.models.main.home.Collections
 import uz.karsoft.baxt.data.models.main.search.Categories
@@ -32,5 +33,8 @@ interface ApiInterface {
 
     @GET("/api/v1/customer/categories")
     suspend fun getCategories(@Header("Authorization") token: String): Response<Categories>
+
+    @GET("/api/v1/customer/categories")
+    suspend fun getCategoriesById(@Header("Authorization") token: String, @Query("collection_id") id: Int): Response<Categories>
 
 }

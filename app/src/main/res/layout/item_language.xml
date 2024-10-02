@@ -1,0 +1,18 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_lang"
+    android:orientation="horizontal"
+    android:layout_marginVertical="@dimen/_8"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tv_lang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16"
+        android:textColor="@color/black"
+        android:gravity="center|start"
+        android:padding="@dimen/_16"
+        tools:ignore="SpUsage" />
+</LinearLayout>

@@ -14,6 +14,7 @@ import uz.karsoft.baxt.repo.MainRepository
 import uz.karsoft.baxt.settings.Settings
 import uz.karsoft.baxt.ui.auth.AuthVM
 import uz.karsoft.baxt.ui.main.home.HomeVM
+import uz.karsoft.baxt.ui.main.home.detail.CategoryVM
 import uz.karsoft.baxt.ui.main.search.SearchVM
 
 val networkModule = module {
@@ -55,4 +56,5 @@ val viewModule = module {
     viewModel { AuthVM(get()) }
     viewModel { HomeVM(get()) }
     viewModel { SearchVM(get()) }
+    viewModel { CategoryVM(get())}
 }

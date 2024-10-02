@@ -32,6 +32,25 @@ class MainRepository (private val apiService: ApiInterface, settings: Settings) 
             }
         }
 
+    fun getCollectionsById(id: Int): Flow<General<Categories>> =
+        flow {
+            emit(General.Loading)
+            try {
+                val response = apiService.getCategoriesById(token, id)
+                if (response.isSuccessful) {
+                    response.body()?.let { body ->
+                        emit(General.SuccessData(body))
+                    } ?: emit(General.Error("No data received"))
+                } else {
+                    emit(General.Error("Error: ${response.code()} ${response.message()}"))
+                }
+            } catch (e: IOException) {
+                emit(General.NetworkError(e.message))
+            } catch (e: HttpException) {
+                emit(General.Error("HTTP error: ${e.message}"))
+            }
+        }
+
     fun getCategories(): Flow<General<Categories>> =
         flow {
             emit(General.Loading)

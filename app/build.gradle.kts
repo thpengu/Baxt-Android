@@ -90,4 +90,7 @@ dependencies {
 
     /** swipe refresh layout */
     implementation(libs.androidx.swiperefreshlayout)
+
+    /** json */
+    implementation(libs.kotlinx.serialization.json)
 }

@@ -9,6 +9,10 @@ class Settings(context: Context) {
         const val LOGGED_IN = "logged_in"
         const val LANGUAGE = "language"
         const val NAME = "name"
+        const val ENGLISH = "en"
+        const val RUSSIAN = "ru"
+        const val UZBEK = "uz"
+        const val KARAKALPAK = "kaa"
     }
     private val preferences: SharedPreferences = context.getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
 

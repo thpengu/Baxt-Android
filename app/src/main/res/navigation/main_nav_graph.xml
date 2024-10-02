@@ -1,27 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="uz.karsoft.baxt.ui.main.home.HomeScreen"
-        android:label="HomeScreen" />
+        android:label="HomeScreen"
+        tools:layout="@layout/layout_home">
+        <action
+            android:id="@+id/action_nav_home_to_categoryItemsScreen"
+            app:destination="@id/categoryItemsScreen" />
+    </fragment>
     <fragment
         android:id="@+id/nav_profile"
         android:name="uz.karsoft.baxt.ui.main.profile.ProfileScreen"
-        android:label="ProfileScreen" />
+        android:label="ProfileScreen"
+        tools:layout="@layout/layout_profile">
+        <action
+            android:id="@+id/action_nav_profile_to_editScreenFragment"
+            app:destination="@id/editScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_search"
         android:name="uz.karsoft.baxt.ui.main.search.SearchScreen"
-        android:label="SearchScreen" />
+        android:label="SearchScreen"
+        tools:layout="@layout/layout_search"/>
     <fragment
         android:id="@+id/nav_basket"
         android:name="uz.karsoft.baxt.ui.main.basket.BasketScreen"
-        android:label="BasketScreen" />
+        android:label="BasketScreen"
+        tools:layout="@layout/layout_basket"/>
     <fragment
         android:id="@+id/nav_saved"
         android:name="uz.karsoft.baxt.ui.main.saved.SavedScreen"
-        android:label="SavedScreen" />
+        android:label="SavedScreen"
+        tools:layout="@layout/layout_saved"/>
+    <fragment
+        android:id="@+id/categoryItemsScreen"
+        android:name="uz.karsoft.baxt.ui.main.home.detail.CategoryItemsScreen"
+        android:label="CategoryItemsScreen"
+        tools:layout="@layout/layout_category_items">
+        <argument
+            android:name="model"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+    <fragment
+        android:id="@+id/editScreenFragment"
+        android:name="uz.karsoft.baxt.ui.main.profile.edit.EditScreenFragment"
+        android:label="EditScreenFragment"
+        tools:layout="@layout/layout_edit_profile"/>
 </navigation>

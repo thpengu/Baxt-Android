@@ -6,13 +6,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/_8"
     android:elevation="@dimen/_4dp"
-    app:cardCornerRadius="@dimen/_12">
+    app:cardCornerRadius="@dimen/_12"
+    android:id="@+id/card_category"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/_8">
         <ImageView
+            android:contentDescription="@string/icon"
             android:id="@+id/iv_category"
             android:layout_width="@dimen/_40"
             android:layout_height="@dimen/_40"

@@ -30,6 +30,7 @@ import android.text.TextWatcher
 import com.google.android.material.textfield.TextInputEditText
 
 fun TextInputEditText.formatPhoneNumber() {
+    this.setText("+998 ")
     this.addTextChangedListener(object : TextWatcher {
         private var isFormatting: Boolean = false
         private var cursorPosition: Int = 0
