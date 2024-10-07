@@ -43,7 +43,18 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rv_navigation"
-            tools:listitem="@layout/item_category2" />
+            tools:listitem="@layout/item_category2"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_categories_items2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_navigation"
+            tools:listitem="@layout/item_category2"
+            android:visibility="gone"/>
 
         <include
             android:id="@+id/search_bar"
@@ -52,17 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_8"
             android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/rv_navigation" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_categories_items2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_bar"
-            tools:listitem="@layout/item_category2"
-            android:visibility="gone"/>
+            app:layout_constraintTop_toBottomOf="@id/rv_categories_items2" />
 
         <ProgressBar
             android:id="@+id/progress_bar"

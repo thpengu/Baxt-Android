@@ -1,4 +1,4 @@
-package uz.karsoft.baxt.ui.main.home.detail
+package uz.karsoft.baxt.ui.main.home.category
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

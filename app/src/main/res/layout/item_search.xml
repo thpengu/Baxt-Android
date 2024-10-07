@@ -28,6 +28,8 @@
             android:id="@+id/tv_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16"
+            android:layout_marginTop="@dimen/_8"
             android:layout_marginHorizontal="@dimen/_16"
             android:text="@string/settings"
             android:textSize="@dimen/_16"

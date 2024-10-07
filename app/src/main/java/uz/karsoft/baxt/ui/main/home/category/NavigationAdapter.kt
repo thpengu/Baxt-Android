@@ -1,4 +1,4 @@
-package uz.karsoft.baxt.ui.main.home.detail
+package uz.karsoft.baxt.ui.main.home.category
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +22,7 @@ class NavigationAdapter: BaseAdapter<NavigationData, NavigationAdapter.ViewHolde
             tvName.setTextColor(textColor)
 
             itemView.onClick {
-                onItemClicked.invoke(position)
+                onItemClicked.invoke(model)
             }
         }
     }
@@ -35,8 +35,8 @@ class NavigationAdapter: BaseAdapter<NavigationData, NavigationAdapter.ViewHolde
         holder.populateModel(models[position], position)
     }
 
-    private var onItemClicked: (pos: Int) -> Unit = {}
-    fun setOnItemClickedListener(onItemClicked: (pos: Int) -> Unit) {
+    private var onItemClicked: (model: NavigationData) -> Unit = {}
+    fun setOnItemClickedListener(onItemClicked: (model: NavigationData) -> Unit) {
         this.onItemClicked = onItemClicked
     }
 }

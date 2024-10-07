@@ -44,6 +44,7 @@ class LoginScreen : Fragment(R.layout.layout_login) {
             tvPasswordForget.onClick {
                 navController.navigate(R.id.action_loginScreen_to_forgetPasswordScreen)
             }
+
             btnLogin.onClick {
                 var phone = ""
                 etPhone.text.toString().forEach {

@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:clickable="true"
     android:focusable="true"
+    android:padding="@dimen/_2"
     android:background="?attr/selectableItemBackground">
 
     <ImageView
@@ -22,12 +23,13 @@
 
     <TextView
         android:id="@+id/tv_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_18"
+        android:textSize="@dimen/_16"
         app:layout_constraintBottom_toBottomOf="@id/iv_start"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_8"
         app:layout_constraintStart_toEndOf="@id/iv_start"
         app:layout_constraintTop_toTopOf="@id/iv_start"
-        tools:ignore="SpUsage" />
+        tools:ignore="SpUsage"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

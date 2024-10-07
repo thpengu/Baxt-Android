@@ -1,4 +1,4 @@
-package uz.karsoft.baxt.ui.main.home.detail
+package uz.karsoft.baxt.ui.main.home.category
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import uz.karsoft.baxt.data.models.auth.General
+import uz.karsoft.baxt.data.models.main.home.detail.product.Products
 import uz.karsoft.baxt.data.models.main.search.Categories
 import uz.karsoft.baxt.repo.MainRepository
 
@@ -22,4 +23,6 @@ class CategoryVM(private val repository: MainRepository): ViewModel() {
             }
         }
     }
+
+
 }
