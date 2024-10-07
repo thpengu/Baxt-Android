@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -53,9 +54,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // Jetpack Compose Integration
-    implementation (libs.androidx.navigation.compose)
-
     // Views/Fragments Integration
     implementation (libs.androidx.navigation.fragment)
     implementation (libs.androidx.navigation.ui)
@@ -87,4 +85,12 @@ dependencies {
 
     /** logging interceptor*/
     implementation(libs.logging.interceptor)
+    /** glide */
+    implementation(libs.glide)
+
+    /** swipe refresh layout */
+    implementation(libs.androidx.swiperefreshlayout)
+
+    /** json */
+    implementation(libs.kotlinx.serialization.json)
 }

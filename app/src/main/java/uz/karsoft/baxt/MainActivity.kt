@@ -21,6 +21,5 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
 
-
     }
 }

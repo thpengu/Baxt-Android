@@ -12,10 +12,10 @@
         tools:layout="@layout/layout_language">
         <action
             android:id="@+id/action_languageScreen_to_loginScreen"
-            app:destination="@id/loginScreen" />
-        <action
-            android:id="@+id/action_languageScreen_to_registrationScreen"
-            app:destination="@id/registrationScreen" />
+            app:destination="@id/loginScreen"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/languageScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registrationScreen"
@@ -26,8 +26,12 @@
             android:id="@+id/action_registrationScreen_to_mainScreen"
             app:destination="@id/mainScreen"
             app:launchSingleTop="true"
-            app:popUpTo="@id/registrationScreen"
-            app:popUpToInclusive="true"/>
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="lang"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/loginScreen"
@@ -39,7 +43,7 @@
             app:destination="@id/mainScreen"
             app:launchSingleTop="true"
             app:popUpTo="@id/loginScreen"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginScreen_to_registrationScreen"
             app:destination="@id/registrationScreen" />
@@ -49,20 +53,24 @@
         <action
             android:id="@+id/action_loginScreen_to_forgetPasswordScreen"
             app:destination="@id/forgetPasswordScreen" />
+        <argument
+            android:name="lang"
+            android:defaultValue=""
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/mainScreen"
         android:name="uz.karsoft.baxt.ui.main.MainScreen"
         android:label="MainScreen"
-        tools:layout="@layout/layout_main"/>
+        tools:layout="@layout/layout_main" />
     <fragment
         android:id="@+id/forgetPasswordScreen"
         android:name="uz.karsoft.baxt.ui.auth.login.ForgetPasswordScreen"
         android:label="ForgetPasswordScreen"
-        tools:layout="@layout/layout_forget_password"/>
+        tools:layout="@layout/layout_forget_password" />
     <fragment
         android:id="@+id/privacyPolicyScreen"
         android:name="uz.karsoft.baxt.ui.auth.login.PrivacyPolicyScreen"
         android:label="PrivacyPolicyScreen"
-        tools:layout="@layout/layout_privacy_policy"/>
+        tools:layout="@layout/layout_privacy_policy" />
 </navigation>
