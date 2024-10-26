@@ -32,4 +32,5 @@
         app:layout_constraintStart_toEndOf="@id/iv_start"
         app:layout_constraintTop_toTopOf="@id/iv_start"
         tools:ignore="SpUsage"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

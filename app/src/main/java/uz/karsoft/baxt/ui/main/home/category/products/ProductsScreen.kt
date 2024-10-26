@@ -37,7 +37,7 @@ class ProductsScreen: Fragment(R.layout.layout_products) {
         super.onViewCreated(view, savedInstanceState)
         _binding = LayoutProductsBinding.bind(view)
         val model = gson.fromJson(args.model, ProductNavigationData::class.java)
-        model.navigationList.add(NavigationData(model.model.name.ru, model.navigationList.size))
+        model.navigationList.add(NavigationData(model.model.name.kaa_latin, model.navigationList.size))
 
         binding.apply {
             rvProducts.adapter = adapter

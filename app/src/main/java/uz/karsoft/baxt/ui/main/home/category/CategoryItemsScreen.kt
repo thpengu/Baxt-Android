@@ -23,16 +23,13 @@ import uz.karsoft.baxt.extensions.showMessage
 class CategoryItemsScreen : Fragment(R.layout.layout_category_items) {
     private var _binding: LayoutCategoryItemsBinding? = null
     private val binding get() = _binding!!
-
     private val args: CategoryItemsScreenArgs by navArgs()
     private val vm: CategoryVM by viewModel()
-
     private val adapter = CategoryItemsAdapter()
     private val adapter2 = CategoryDetailItemsAdapter()
     private val navAdapter = NavigationAdapter()
     private var navModels = mutableListOf<NavigationData>()
     private val gsonPretty = GsonBuilder().setPrettyPrinting().create()
-
     private val gson = Gson()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

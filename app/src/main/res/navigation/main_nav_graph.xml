@@ -22,6 +22,11 @@
         <action
             android:id="@+id/action_nav_profile_to_editScreenFragment"
             app:destination="@id/editScreenFragment" />
+        <action
+            android:id="@+id/action_nav_profile_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/nav_profile"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/nav_search"
@@ -55,7 +60,11 @@
         android:id="@+id/editScreenFragment"
         android:name="uz.karsoft.baxt.ui.main.profile.edit.EditScreenFragment"
         android:label="EditScreenFragment"
-        tools:layout="@layout/layout_edit_profile"/>
+        tools:layout="@layout/layout_edit_profile">
+        <action
+            android:id="@+id/action_editScreenFragment_to_nav_profile"
+            app:destination="@id/nav_profile" />
+    </fragment>
     <fragment
         android:id="@+id/productsScreen"
         android:name="uz.karsoft.baxt.ui.main.home.category.products.ProductsScreen"
@@ -77,5 +86,13 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/productsScreen"
             app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="uz.karsoft.baxt.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_nav_profile"
+            app:destination="@id/nav_profile" />
     </fragment>
 </navigation>

@@ -12,15 +12,18 @@
         android:id="@+id/action_bar"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:drawableStartCompat="@drawable/ic_left"
         app:layout_constraintTop_toBottomOf="@id/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="@string/settings"
         android:textSize="@dimen/_16"
         android:drawablePadding="@dimen/_8"
         android:layout_marginHorizontal="@dimen/_8"
         tools:ignore="SpUsage"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
         android:id="@+id/tv_back"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
