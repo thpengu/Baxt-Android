@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/swipe_refresh_layout_category"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,6 +28,16 @@
             tools:listitem="@layout/item_navigation"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_categories_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/rv_navigation"
+            tools:listitem="@layout/item_category2"
+            />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="0.5dp"
@@ -36,24 +48,15 @@
             app:layout_constraintTop_toTopOf="@id/rv_navigation"
             android:layout_marginHorizontal="@dimen/_8"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_categories_items"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_navigation"
-            tools:listitem="@layout/item_category2"
-            />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_categories_items2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_navigation"
-            tools:listitem="@layout/item_category2"
+            app:layout_constraintTop_toBottomOf="@id/rv_categories_items"
+            tools:listitem="@layout/item_product"
             android:visibility="gone"/>
 
         <include
@@ -75,4 +78,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

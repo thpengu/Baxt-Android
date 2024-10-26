@@ -15,7 +15,9 @@ import uz.karsoft.baxt.settings.Settings
 import uz.karsoft.baxt.ui.auth.AuthVM
 import uz.karsoft.baxt.ui.main.home.HomeVM
 import uz.karsoft.baxt.ui.main.home.category.CategoryVM
+import uz.karsoft.baxt.ui.main.home.category.markets.MarketByIdVM
 import uz.karsoft.baxt.ui.main.home.category.products.ProductsVM
+import uz.karsoft.baxt.ui.main.home.foods.AllFoodsVM
 import uz.karsoft.baxt.ui.main.search.SearchVM
 
 val networkModule = module {
@@ -59,4 +61,6 @@ val viewModule = module {
     viewModel { SearchVM(get()) }
     viewModel { CategoryVM(get())}
     viewModel { ProductsVM(get())}
+    viewModel { AllFoodsVM(get())}
+    viewModel { MarketByIdVM(get())}
 }

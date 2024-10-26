@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -93,4 +94,12 @@ dependencies {
 
     /** json */
     implementation(libs.kotlinx.serialization.json)
+
+    //firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation("com.google.firebase:firebase-analytics")
+
+
+
+
 }

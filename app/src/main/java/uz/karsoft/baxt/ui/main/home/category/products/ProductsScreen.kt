@@ -12,23 +12,30 @@ import com.google.gson.GsonBuilder
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.karsoft.baxt.R
+import uz.karsoft.baxt.data.local.DatabaseHelper
 import uz.karsoft.baxt.data.models.auth.General
+import uz.karsoft.baxt.data.models.main.foods.AllFoodsData
 import uz.karsoft.baxt.data.models.main.home.Data
 import uz.karsoft.baxt.data.models.main.home.detail.NavigationData
 import uz.karsoft.baxt.data.models.main.home.detail.product.ProductNavigationData
 import uz.karsoft.baxt.data.models.main.home.detail.product.Products
+import uz.karsoft.baxt.data.models.main.home.detail.product_by_id_data.ProductByIdData
 import uz.karsoft.baxt.databinding.LayoutCategoryItemsBinding
 import uz.karsoft.baxt.databinding.LayoutHomeBinding
 import uz.karsoft.baxt.databinding.LayoutProductsBinding
 import uz.karsoft.baxt.databinding.LayoutProfileBinding
 import uz.karsoft.baxt.extensions.showMessage
 import uz.karsoft.baxt.ui.main.home.category.NavigationAdapter
+import uz.karsoft.baxt.ui.main.home.foods.AllFoodsVM
+import uz.karsoft.baxt.ui.main.home.foods.FoodsAdapter
 
 class ProductsScreen: Fragment(R.layout.layout_products) {
     private val vm: ProductsVM by viewModel()
+    private val vmFoods: AllFoodsVM by viewModel()
     private var _binding: LayoutProductsBinding? = null
     private val binding get() = _binding!!
-    private val adapter = ProductsAdapter()
+    private val adapter = ProductsAdapter(requireContext())
+    private val adapterFoods = FoodsAdapter()
     private val navAdapter = NavigationAdapter()
     private val args: ProductsScreenArgs by navArgs()
     private val gson = Gson()
@@ -44,6 +51,7 @@ class ProductsScreen: Fragment(R.layout.layout_products) {
             rvNavigation.adapter = navAdapter
             navAdapter.models = model.navigationList
 
+            rvProducts.adapter = adapterFoods
             vm.getProductsById(model.model.id)
             setUpObservers()
         }
@@ -67,14 +75,30 @@ class ProductsScreen: Fragment(R.layout.layout_products) {
         viewLifecycleOwner.lifecycleScope.launch {
             vm.productsState.collect { result ->
                 when (result) {
-                    is General.SuccessData<Products> -> {
+                    is General.SuccessData<ProductByIdData> -> {
                         setLoading(false)
-                        adapter.models = result.data.data
+                       // adapter.models = result.data.data
                     }
                     is General.NetworkError -> handleError(result.msg)
                     is General.Error -> handleError(result.toString())
                     is General.Loading -> setLoading(true)
                    else -> Exception("hello")
+                }
+            }
+        }
+
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            vmFoods.foodsState.collect { result ->
+                when (result) {
+                    is General.SuccessData<AllFoodsData> -> {
+                        setLoading(false)
+                        // adapter.models = result.data.data
+                    }
+                    is General.NetworkError -> handleError(result.msg)
+                    is General.Error -> handleError(result.toString())
+                    is General.Loading -> setLoading(true)
+                    else -> Exception("hello")
                 }
             }
         }
