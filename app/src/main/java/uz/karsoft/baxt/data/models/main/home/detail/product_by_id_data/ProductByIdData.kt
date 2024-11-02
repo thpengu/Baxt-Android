@@ -1,6 +1,5 @@
 package uz.karsoft.baxt.data.models.main.home.detail.product_by_id_data
 
-import kotlinx.coroutines.flow.Flow
 
 data class ProductByIdData(
     val `data`: ByIdData

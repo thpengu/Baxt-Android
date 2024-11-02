@@ -12,7 +12,6 @@ import com.google.gson.GsonBuilder
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import uz.karsoft.baxt.R
-import uz.karsoft.baxt.data.local.DatabaseHelper
 import uz.karsoft.baxt.data.models.auth.General
 import uz.karsoft.baxt.data.models.main.foods.AllFoodsData
 import uz.karsoft.baxt.data.models.main.home.Data

@@ -59,7 +59,18 @@
         android:id="@+id/nav_saved"
         android:name="uz.karsoft.baxt.ui.main.saved.SavedScreen"
         android:label="SavedScreen"
-        tools:layout="@layout/layout_saved"/>
+        tools:layout="@layout/layout_saved">
+        <action
+            android:id="@+id/action_nav_saved_to_productByIdLayout"
+            app:destination="@id/productByIdLayout" >
+
+            <argument
+                android:name="productId"
+                app:argType="integer"
+                />
+
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/categoryItemsScreen"
         android:name="uz.karsoft.baxt.ui.main.home.category.CategoryItemsScreen"

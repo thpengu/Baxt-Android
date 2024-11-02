@@ -6,12 +6,34 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/action_bar_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/search_bar"
+        layout="@layout/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20"
+        app:layout_constraintTop_toBottomOf="@id/action_bar"/>
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_saved_products"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintTop_toTopOf="parent"
         app:spanCount="2"
-        tools:listitem="@layout/item_saved" />
+        android:layout_marginTop="@dimen/_16"
+        android:layout_marginHorizontal="@dimen/_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        tools:listitem="@layout/item_saved"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

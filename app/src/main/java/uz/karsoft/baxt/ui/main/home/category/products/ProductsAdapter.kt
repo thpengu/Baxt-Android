@@ -1,11 +1,11 @@
 package uz.karsoft.baxt.ui.main.home.category.products
 
+import DatabaseHelper
 import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import uz.karsoft.baxt.R
-import uz.karsoft.baxt.data.local.DatabaseHelper
 import uz.karsoft.baxt.data.models.main.home.detail.all_products.AllData
 import uz.karsoft.baxt.data.models.main.saved_data.SavedProductsData // Yangi model qo'shildi
 import uz.karsoft.baxt.databinding.ItemProductBinding
@@ -45,7 +45,7 @@ class ProductsAdapter(val context: Context) : BaseAdapter<AllData, ProductsAdapt
                         review_count = model.review_count, // Agar review_count bo'lsa
                         updated_at = "now" // Yangilanish sanasi
                     )
-                    dbHelper.addProduct(savedProduct) // Qo'shish
+                    dbHelper.addProductToFavorites(savedProduct) // Qo'shish
                     ivLiked.setImageResource(R.drawable.ic_heart)
                 } else {
                     // Aks holda, mahsulotni o'chiramiz

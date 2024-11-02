@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/img_product_korzinka"
-                android:text="Qara fudbolka sintetik"
+                android:text=""
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
                 android:textSize="20sp"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@id/product_name_korzinka"
                 app:layout_constraintStart_toEndOf="@id/img_product_korzinka"
-                android:text="nike nukus"
+                android:text=""
                 android:layout_marginTop="36dp"
                 android:layout_marginStart="16dp"
                 android:textSize="20sp"
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/magazin_name_korzinka"
                 app:layout_constraintStart_toEndOf="@id/img_product_korzinka"
-                android:text="200 000 sum"
+                android:text=""
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
                 android:textSize="20sp"
@@ -75,7 +75,19 @@
 
                 />
 
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/line_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_trash"
+                android:layout_marginEnd="8dp"
+                />
+
             <View
+                android:id="@+id/line_vertical"
                 android:layout_width="1dp"
                 android:layout_height="90dp"
                 app:layout_constraintTop_toTopOf="parent"
@@ -120,6 +132,7 @@
                 android:layout_marginTop="12dp"
                 app:cardBackgroundColor="#47B881"
                 app:cardCornerRadius="5dp"
+                android:padding="8dp"
                 >
 
                 <ImageView
