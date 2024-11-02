@@ -1,4 +1,4 @@
-package uz.karsoft.baxt
+package uz.karsoft.baxt.ui.main.profile.settings
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.android.ext.android.inject
+import uz.karsoft.baxt.R
 import uz.karsoft.baxt.databinding.FragmentSettingsBinding
 import uz.karsoft.baxt.extensions.onClick
 import uz.karsoft.baxt.settings.Settings

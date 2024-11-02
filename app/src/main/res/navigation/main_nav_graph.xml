@@ -137,7 +137,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="uz.karsoft.baxt.SettingsFragment"
+        android:name="uz.karsoft.baxt.ui.main.profile.settings.SettingsFragment"
         android:label="SettingsFragment" >
         <action
             android:id="@+id/action_settingsFragment_to_nav_profile"
