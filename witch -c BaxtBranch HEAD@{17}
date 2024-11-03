@@ -1,0 +1,31 @@
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: checkout: moving from c0d19f39b2c7049f20b17bb82fd9e21498ad36a0 to main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: checkout: moving from main to origin/main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: checkout: moving from main to main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: branch: Reset to origin/main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{4}: checkout: moving from main to main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{5}: checkout: moving from main to main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{6}: branch: Reset to origin/main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{7}: checkout: moving from main to main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{8}: branch: Reset to origin/main
+[33mc0d19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{9}: commit: Remove embedded repository
+[33m85f2ced[m HEAD@{10}: checkout: moving from main to main
+[33m85f2ced[m HEAD@{11}: branch: Reset to origin/main
+[33m85f2ced[m HEAD@{12}: checkout: moving from main to main
+[33m85f2ced[m HEAD@{13}: branch: Reset to origin/main
+[33m85f2ced[m HEAD@{14}: checkout: moving from main to main
+[33m85f2ced[m HEAD@{15}: branch: Reset to origin/main
+[33m85f2ced[m HEAD@{16}: checkout: moving from BaxtBranch to main
+[33m353152e[m HEAD@{17}: checkout: moving from main to BaxtBranch
+[33m85f2ced[m HEAD@{18}: checkout: moving from main to main
+[33m85f2ced[m HEAD@{19}: pull: Fast-forward
+[33me5d65fe[m HEAD@{20}: Branch: renamed refs/heads/main to refs/heads/main
+[33me5d65fe[m HEAD@{22}: Branch: renamed refs/heads/main to refs/heads/main
+[33me5d65fe[m HEAD@{24}: commit: first commit
+[33m38fee73[m HEAD@{25}: checkout: moving from BaxtBranch to main
+[33m353152e[m HEAD@{26}: commit: BaxtFrist
+[33m38fee73[m HEAD@{27}: checkout: moving from main to BaxtBranch
+[33m38fee73[m HEAD@{28}: pull: Fast-forward
+[33m948faff[m HEAD@{29}: checkout: moving from main to main
+[33m948faff[m HEAD@{30}: Branch: renamed refs/heads/main to refs/heads/main
+[33m948faff[m HEAD@{32}: commit: first commit
+[33m40dc2e6[m HEAD@{33}: clone: from https://github.com/thpengu/Baxt-Android.git
